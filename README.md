@@ -16,6 +16,34 @@ https://www.kaggle.com/c/dogs-vs-cats/data
 
     sudo apt-get install python3-tk
 
+3. install tensorflow
+
+    https://www.tensorflow.org/install/pip
+
+4. install NVidia drivers and CUDA toolkit
+
+    https://developer.nvidia.com/cuda-downloads
+
+May need nvidia-gds package as well.
+
+    sudo apt-get install nvidia-gds
+
+Needed a compatible versino of CuDNN (for deep neural networks).
+
+    https://developer.nvidia.com/rdp/cudnn-download
+
+5. tensorflow still couldn't find my cuda drivers
+
+    pip3 install nvidia-tensorrt
+
+Then point `$PATH` at the CUDA binary and `$LD_LIBRARY_PATH` at the
+tensorrt and `libcudnn` libraries. Note that the paths might be different
+depending on installation.
+
+    export PATH=/usr/local/cuda-11/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/lib/python3.8/site-packages/tensorrt
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu
+
 
 # make a basic script to output some photos
 
@@ -59,3 +87,21 @@ Each of those will have `cats` and `dogs` subdirectories.
 25% of the dog and cat images will be set aside for testing.
 
 See `setup_data.py` for the code to do this.
+
+# develop a baseline Convolutional Neuroal Network model
+
+
+# Reading List
+
+## Initial Tutorial
+https://machinelearningmastery.com/how-to-develop-a-convolutional-neural-network-to-classify-photos-of-dogs-and-cats/
+
+## VGG Model (Visual Geometry Group)
+This is a standard Convolutional Neural Network (CNN) architecture with multiple layers.
+https://viso.ai/deep-learning/vgg-very-deep-convolutional-networks/
+
+## CNN Model (Convolutional neural network)
+Popular in compute vision.
+
+https://towardsdatascience.com/convolutional-neural-networks-explained-9cc5188c4939
+https://viso.ai/deep-learning/deep-neural-network-three-popular-types/
