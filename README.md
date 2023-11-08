@@ -44,6 +44,8 @@ depending on installation.
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/lib/python3.8/site-packages/tensorrt
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu
 
+6. Install `direnv` to have the environment variables loaded every time
+you `cd` into the repository.
 
 # make a basic script to output some photos
 
