@@ -108,6 +108,9 @@ def main():
     _, acc = model.evaluate_generator(test_iterator, steps=len(test_iterator), verbose=0)
     print("> %.3f" % (acc * 100.0))
 
+    # save the model
+    model.save('initial_model.keras')
+
     # plot learning curves
     summarize_diagnostics(history)
 
